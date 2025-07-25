@@ -4,12 +4,12 @@
 # Replace `LeaderName` with the name of the player you want to follow.
 
 ######## Login options ########
-master        127.0.0.1
-server        0
-username      your_account
-password      your_password
-char          0
-serverType    rAthena
+# master        127.0.0.1
+# server        0
+# username      your_account
+# password      your_password
+# char          0
+# serverType    rAthena
 
 ######## Follow settings ########
 follow 1
