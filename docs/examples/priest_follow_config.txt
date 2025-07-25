@@ -1,0 +1,49 @@
+# Sample OpenKore configuration for a support Priest
+# This configuration demonstrates how to make a Priest automatically
+# follow a chosen character and provide basic support skills.
+# Replace `LeaderName` with the name of the player you want to follow.
+
+######## Login options ########
+master        127.0.0.1
+server        0
+username      your_account
+password      your_password
+char          0
+serverType    rAthena
+
+######## Follow settings ########
+follow 1
+followTarget LeaderName
+followDistanceMin 3
+followDistanceMax 6
+followLostStep 12
+followSitAuto 0
+
+######## Party support skills ########
+# Heal party members below 70%% HP
+partySkill Heal {
+    lvl 10
+    target_hp < 70%
+    timeout 2
+}
+
+# Bless party members when they do not have Blessing
+partySkill Blessing {
+    lvl 10
+    target_whenStatusInactive Blessing
+    timeout 150
+}
+
+# Increase Agility if it is not active
+partySkill Increase AGI {
+    lvl 10
+    target_whenStatusInactive Increase AGI
+    timeout 120
+}
+
+# Resurrection when a party member is dead
+partySkill Resurrection {
+    lvl 4
+    target_dead 1
+    timeout 5
+}
