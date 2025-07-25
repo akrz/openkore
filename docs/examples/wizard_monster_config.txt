@@ -1,0 +1,43 @@
+# Sample OpenKore configuration for a damage Wizard
+# Demonstrates using different skills depending on the monster
+# Replace `YourAccount` details as needed and set up the wizard class.
+
+######## Login options ########
+master        127.0.0.1
+server        0
+username      your_account
+password      your_password
+char          0
+serverType    rAthena
+
+######## Attack skills ########
+# Cast Jupitel Thunder specifically on Siroma
+attackSkillSlot Jupitel Thunder {
+    lvl 10
+    dist 9
+    monsters Siroma
+    timeout 2
+}
+
+# Use Fire Bolt on Earth property monsters such as Les
+attackSkillSlot Fire Bolt {
+    lvl 10
+    dist 9
+    monsters Les
+    timeout 2
+}
+
+# Use Cold Bolt on Fire property monsters like Muscipular
+attackSkillSlot Cold Bolt {
+    lvl 10
+    dist 9
+    monsters Muscipular
+    timeout 2
+}
+
+# Default single target spell if none of the above match
+attackSkillSlot Lightning Bolt {
+    lvl 10
+    dist 9
+    timeout 2
+}
